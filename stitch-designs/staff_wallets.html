@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Staff Wallets | Command Console</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#9cf0ff",
+              "secondary-container": "#00e3fd",
+              "on-surface": "#e2e2e8",
+              "surface-container-highest": "#333539",
+              "on-tertiary-fixed-variant": "#5c4300",
+              "on-primary-fixed-variant": "#0035be",
+              "on-primary": "#002388",
+              "tertiary-fixed": "#ffdfa0",
+              "surface-container-high": "#282a2e",
+              "inverse-on-surface": "#2f3035",
+              "on-primary-container": "#efefff",
+              "on-primary-fixed": "#001356",
+              "tertiary-container": "#8c6700",
+              "secondary-fixed-dim": "#00daf3",
+              "primary-fixed": "#dde1ff",
+              "on-error": "#690005",
+              "primary-fixed-dim": "#b8c3ff",
+              "surface-bright": "#37393e",
+              "on-tertiary": "#402d00",
+              "on-secondary-fixed": "#001f24",
+              "inverse-surface": "#e2e2e8",
+              "tertiary": "#fbbc00",
+              "error": "#ffb4ab",
+              "on-surface-variant": "#c4c5d9",
+              "on-secondary": "#00363d",
+              "on-tertiary-container": "#ffeed3",
+              "on-secondary-fixed-variant": "#004f58",
+              "secondary": "#bdf4ff",
+              "surface-container": "#1e2024",
+              "error-container": "#93000a",
+              "surface-tint": "#b8c3ff",
+              "inverse-primary": "#124af0",
+              "primary-container": "#2e5bff",
+              "background": "#111318",
+              "primary": "#b8c3ff",
+              "surface-dim": "#111318",
+              "surface-container-low": "#1a1c20",
+              "on-tertiary-fixed": "#261a00",
+              "outline": "#8e90a2",
+              "tertiary-fixed-dim": "#fbbc00",
+              "surface-container-lowest": "#0c0e12",
+              "on-background": "#e2e2e8",
+              "surface-variant": "#333539",
+              "outline-variant": "#434656",
+              "surface": "#111318",
+              "on-secondary-container": "#00616d",
+              "on-error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .ghost-border {
+        outline: 0.5px solid rgba(67, 70, 86, 0.4);
+      }
+      .glass-card {
+        background: rgba(51, 53, 57, 0.6);
+        backdrop-filter: blur(16px);
+      }
+      body {
+        background-color: #111318;
+      }
+    </style>
+</head>
+<body class="font-body text-on-surface antialiased overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#111318]/60 backdrop-blur-xl border-b border-[#ffffff]/10 flex justify-between items-center px-6 h-16 w-full shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+<div class="flex items-center gap-8">
+<span class="text-xl font-semibold tracking-tighter text-[#e2e2e8] font-headline uppercase">Command Console</span>
+<div class="hidden md:flex items-center gap-6 font-['Manrope'] font-light tracking-tight text-sm">
+<a class="text-[#e2e2e8]/60 hover:bg-[#ffffff]/5 transition-colors px-3 py-1 rounded" href="#">Dashboard</a>
+<a class="text-[#e2e2e8]/60 hover:bg-[#ffffff]/5 transition-colors px-3 py-1 rounded" href="#">Receipts</a>
+<a class="text-[#b8c3ff] font-medium px-3 py-1 rounded" href="#">Staff Wallets</a>
+<a class="text-[#e2e2e8]/60 hover:bg-[#ffffff]/5 transition-colors px-3 py-1 rounded" href="#">Budget Config</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-secondary font-headline font-medium tracking-tight text-xs bg-secondary-container/10 px-3 py-1.5 rounded-md border border-secondary-container/20">
+                Live Burn Rate: $12.4k/hr
+            </span>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-[#ffffff]/5 transition-colors active:scale-95 duration-200 rounded-md">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+<button class="p-2 hover:bg-[#ffffff]/5 transition-colors active:scale-95 duration-200 rounded-md">
+<span class="material-symbols-outlined text-on-surface-variant">settings</span>
+</button>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 z-40 bg-[#111318] border-r border-[#ffffff]/5 flex flex-col pt-20 pb-6 px-4 hidden md:flex">
+<div class="mb-10 px-4">
+<h2 class="font-headline text-lg font-bold tracking-tight text-on-surface">Project Obsidian</h2>
+<p class="font-label text-[10px] uppercase tracking-[0.1em] text-on-surface-variant/60">Production Finance</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#e2e2e8]/40 font-medium font-['Inter'] uppercase tracking-[0.05em] text-[10px] hover:text-[#e2e2e8] hover:bg-[#ffffff]/5 transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-lg">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#e2e2e8]/40 font-medium font-['Inter'] uppercase tracking-[0.05em] text-[10px] hover:text-[#e2e2e8] hover:bg-[#ffffff]/5 transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-lg">receipt_long</span>
+                Receipts
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#b8c3ff] bg-[#2e5bff]/10 border-r-2 border-[#b8c3ff] font-medium font-['Inter'] uppercase tracking-[0.05em] text-[10px] transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-lg">payments</span>
+                Staff Wallets
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#e2e2e8]/40 font-medium font-['Inter'] uppercase tracking-[0.05em] text-[10px] hover:text-[#e2e2e8] hover:bg-[#ffffff]/5 transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-lg">settings_applications</span>
+                Budget Config
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#e2e2e8]/40 font-medium font-['Inter'] uppercase tracking-[0.05em] text-[10px] hover:text-[#e2e2e8] hover:bg-[#ffffff]/5 transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-lg">analytics</span>
+                Reports
+            </a>
+</nav>
+<div class="mt-auto space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#e2e2e8]/40 font-medium font-['Inter'] uppercase tracking-[0.05em] text-[10px] hover:text-[#e2e2e8] hover:bg-[#ffffff]/5 transition-all" href="#">
+<span class="material-symbols-outlined text-lg">help_outline</span>
+                Support
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#e2e2e8]/40 font-medium font-['Inter'] uppercase tracking-[0.05em] text-[10px] hover:text-[#e2e2e8] hover:bg-[#ffffff]/5 transition-all" href="#">
+<span class="material-symbols-outlined text-lg">logout</span>
+                Sign Out
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:pl-64 pt-24 pb-12 px-6">
+<div class="max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+<div>
+<h1 class="font-headline text-3xl font-light tracking-tight mb-1 text-on-surface">スタッフ別ウォレット管理</h1>
+<p class="text-on-surface-variant/70 font-label text-sm">Staff Wallet Management &amp; Real-time Petty Cash Oversight</p>
+</div>
+<div class="flex gap-3">
+<button class="px-5 py-2.5 rounded-md border border-outline-variant hover:bg-on-surface/5 transition-colors font-label text-xs uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span> 一括レポート出力
+                    </button>
+<button class="px-5 py-2.5 rounded-md bg-primary-container text-on-primary-container hover:brightness-110 transition-all font-label text-xs uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-primary-container/20">
+<span class="material-symbols-outlined text-sm">add</span> 新規スタッフ登録
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Main Wallets List (Col 8) -->
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-4">
+<div class="flex items-center justify-between px-4 py-2 bg-surface-container-highest/30 rounded-t-md">
+<span class="font-label text-[10px] uppercase tracking-[0.1em] text-on-surface-variant">Active Staff Members (12)</span>
+<div class="flex gap-4">
+<span class="font-label text-[10px] uppercase tracking-[0.1em] text-on-surface-variant">Allocation</span>
+<span class="font-label text-[10px] uppercase tracking-[0.1em] text-on-surface-variant">Remaining</span>
+</div>
+</div>
+<!-- Staff Entry 1 (Selected) -->
+<div class="glass-card ghost-border p-5 rounded-xl border-l-4 border-primary shadow-xl">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg overflow-hidden bg-surface-container-high relative">
+<img alt="田中 健太" class="w-full h-full object-cover grayscale opacity-80" data-alt="Portrait of a Japanese professional male" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-Lkv2mz96G-HllaLME1Lnf78XTA8JE0WdKquwBvKUIPk5fQgRcIbSDXGbFm4CvJwKL39r0T0tza7RpGf-reIS4T0cXllGXm5PYAG7Y5j558IbgyqBiw_4veOgQzjH76p4FbZI6nZM6K8e9yMW_UzSdP_v7Slv5gQ6Hmd6WJoC54LnMjGtRNl7waht-hBKMp-RZY8wIin_qjBwyW9Zz9D5oh2A9T9gwYzI3a9gsJXQneuWs0wgFAoUGYyLWCO75xK3odfcj_N1-Xc"/>
+</div>
+<div>
+<h3 class="text-on-surface font-semibold text-base">田中 健太 (Kenta Tanaka)</h3>
+<span class="bg-surface-container-high px-2 py-0.5 rounded text-[10px] uppercase tracking-wide text-on-surface-variant">Production Manager</span>
+</div>
+</div>
+<div class="text-right">
+<div class="text-2xl font-headline font-light text-primary">¥142,500</div>
+<div class="text-[10px] uppercase tracking-tighter text-on-surface-variant">Remaining Balance</div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[10px] font-label text-on-surface-variant uppercase tracking-widest">
+<span>Utilization</span>
+<span>64% Spent</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container shadow-[0_0_12px_rgba(46,91,255,0.4)]" style="width: 64%"></div>
+</div>
+<div class="flex justify-between text-[10px] font-label text-on-surface-variant pt-1">
+<span>Spent: ¥257,500</span>
+<span>Limit: ¥400,000</span>
+</div>
+</div>
+</div>
+<!-- Staff Entry 2 -->
+<div class="bg-surface-container-low hover:bg-surface-container-high transition-colors p-5 rounded-xl flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg overflow-hidden bg-surface-container-high relative">
+<img alt="佐藤 美咲" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 transition-all" data-alt="Portrait of a Japanese professional female" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz7ESjicK6C4MlCw2TzTdgNzWQxpWAWJAfx03ZlaT5W0XHA428vguy-XTIgoayylgKe-dXYec3T9ZGRvzgQWOZsYorN32HuP2DkjZUqpGVpgRWOUEMKEL7AcaaFmxHE9pQFOtcVAJLd_sMrbVF1QIBEC5chtPdud-FG8dVXXqmLD9mxK69Gqt0b0gzXE5n8AIr6O4vsPb47c1NdBGEgR2giQj3u2f18b2mQ6DCJaj7nwJhg9GRFH-SE9zKfMFs39mleK2ytSlhqn0"/>
+</div>
+<div>
+<h3 class="text-on-surface font-medium text-base">佐藤 美咲 (Misaki Sato)</h3>
+<span class="text-[10px] uppercase tracking-wide text-on-surface-variant/60">Lead Stylist</span>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="w-32 hidden md:block">
+<div class="h-1 w-full bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container" style="width: 22%"></div>
+</div>
+<div class="text-[9px] text-on-surface-variant/60 mt-2 text-right">22% Utilization</div>
+</div>
+<div class="text-right">
+<div class="text-lg font-headline font-medium text-on-surface">¥195,000</div>
+<div class="text-[9px] uppercase text-on-surface-variant/50">Balance</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+</div>
+<!-- Staff Entry 3 -->
+<div class="bg-surface-container-low hover:bg-surface-container-high transition-colors p-5 rounded-xl flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg overflow-hidden bg-surface-container-high relative">
+<img alt="伊藤 裕二" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 transition-all" data-alt="Portrait of a professional man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcldr0NZPf84zZS3OO0sPuVz6-nQY9ulZXn0XPGd2hAlxaDV1pAqm7xl2YWhaL8w_ko3Z0GBN5L13618m3ua9ssF6r4BjsrptL11StDZXSNdQ95oG3QSUQUqdT4YJ3IdnBpxrS8g2UXRVdrTSweriOKJm6ENFfb-sVCp5ijV78vPdGmq3xeUH1wTsjnAHKcad-foykpzfH1019NazbYcQqRMZTMx1_p1dZSzlE0Tbpk2kBs0uDQHHEMeQWavH3bXE5cIQtEGqDa0k"/>
+</div>
+<div>
+<h3 class="text-on-surface font-medium text-base">伊藤 裕二 (Yuji Ito)</h3>
+<span class="text-[10px] uppercase tracking-wide text-on-surface-variant/60">Location Scout</span>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="w-32 hidden md:block">
+<div class="h-1 w-full bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary" style="width: 88%"></div>
+</div>
+<div class="text-[9px] text-tertiary mt-2 text-right">88% Utilization</div>
+</div>
+<div class="text-right">
+<div class="text-lg font-headline font-medium text-on-surface">¥12,400</div>
+<div class="text-[9px] uppercase text-on-surface-variant/50 text-tertiary">Critical Low</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+</div>
+<!-- Staff Entry 4 -->
+<div class="bg-surface-container-low hover:bg-surface-container-high transition-colors p-5 rounded-xl flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg overflow-hidden bg-surface-container-high relative">
+<img alt="渡辺 杏" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 transition-all" data-alt="Portrait of a creative woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCATMMIz3aJoiDzsAwVK5xxzoiApflpewCQ_6gXGYqoZ6OL0FR_F6bh30L9u_V2jJw75ZQMaeYUC6QpRLsUMm_ug97HE1j0xkl9MobYxMjqqFfBDGRyXgy4XB_NKXwNrIB89hBaaNtiIyrJVQ9z3cTYYiRrTjVjGTMeDOWhPB92YGlfFVKKrg2sLdXZF1uaJ9LsyeJ4BudUMCKBQNAM49xJ1Jdts6iCKSqQkl39DeFxa65SUs8RNxEpXABc2NXUnIxMsk8jxfp7IVg"/>
+</div>
+<div>
+<h3 class="text-on-surface font-medium text-base">渡辺 杏 (Anne Watanabe)</h3>
+<span class="text-[10px] uppercase tracking-wide text-on-surface-variant/60">Art Director</span>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="w-32 hidden md:block">
+<div class="h-1 w-full bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container" style="width: 45%"></div>
+</div>
+<div class="text-[9px] text-on-surface-variant/60 mt-2 text-right">45% Utilization</div>
+</div>
+<div class="text-right">
+<div class="text-lg font-headline font-medium text-on-surface">¥82,500</div>
+<div class="text-[9px] uppercase text-on-surface-variant/50">Balance</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Detailed View Sidebar (Col 4) -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<!-- Detail Section:田中 健太 -->
+<div class="glass-card ghost-border rounded-xl flex flex-col h-full sticky top-24">
+<div class="p-6 border-b border-outline-variant/20">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline text-lg font-semibold tracking-tight text-on-surface">取引履歴詳細</h2>
+<span class="material-symbols-outlined text-on-surface-variant/60">more_vert</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg flex items-center gap-4 mb-6">
+<div class="w-10 h-10 rounded bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant font-label">Selected Staff</div>
+<div class="text-sm font-medium">田中 健太</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-3 mb-2">
+<button class="bg-primary-container text-on-primary-container py-3 rounded-md font-label text-[10px] uppercase tracking-widest flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">account_balance_wallet</span> Request Top-up
+                                </button>
+<button class="ghost-border text-on-surface py-3 rounded-md font-label text-[10px] uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-on-surface/5 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">chat_bubble</span> Message
+                                </button>
+</div>
+</div>
+<!-- Recent Transactions -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<h3 class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mb-4">Recent Activity</h3>
+<!-- Transaction 1 -->
+<div class="flex justify-between items-start">
+<div class="flex gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">shopping_cart</span>
+</div>
+<div>
+<div class="text-xs font-medium text-on-surface">機材レンタル延長費用</div>
+<div class="text-[10px] text-on-surface-variant">24 Oct, 2023 • Equipment</div>
+</div>
+</div>
+<div class="text-xs font-semibold text-error text-right">-¥12,400</div>
+</div>
+<!-- Transaction 2 -->
+<div class="flex justify-between items-start">
+<div class="flex gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">local_taxi</span>
+</div>
+<div>
+<div class="text-xs font-medium text-on-surface">タクシー代 (現場移動)</div>
+<div class="text-[10px] text-on-surface-variant">23 Oct, 2023 • Logistics</div>
+</div>
+</div>
+<div class="text-xs font-semibold text-error text-right">-¥4,280</div>
+</div>
+<!-- Transaction 3 -->
+<div class="flex justify-between items-start">
+<div class="flex gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">restaurant</span>
+</div>
+<div>
+<div class="text-xs font-medium text-on-surface">スタッフ昼食 (12名分)</div>
+<div class="text-[10px] text-on-surface-variant">23 Oct, 2023 • Catering</div>
+</div>
+</div>
+<div class="text-xs font-semibold text-error text-right">-¥18,000</div>
+</div>
+<!-- Transaction 4 -->
+<div class="flex justify-between items-start">
+<div class="flex gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">add_circle</span>
+</div>
+<div>
+<div class="text-xs font-medium text-on-surface">入金 (Top-up)</div>
+<div class="text-[10px] text-on-surface-variant">20 Oct, 2023 • System</div>
+</div>
+</div>
+<div class="text-xs font-semibold text-secondary text-right">+¥200,000</div>
+</div>
+<button class="w-full text-center text-[10px] uppercase font-label tracking-widest text-primary hover:underline mt-4">
+                                View Full Transaction History
+                            </button>
+</div>
+<!-- Mini Map / Location Context (Visual Interest) -->
+<div class="p-6 pt-0">
+<div class="relative h-24 rounded-lg overflow-hidden grayscale brightness-50 contrast-125 border border-outline-variant/30">
+<img alt="Location Context" class="w-full h-full object-cover" data-alt="Abstract dark city map topography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmaJjIcu_8szWtw537wPGNccjPFWdPXyfidEf9-P8_QOI2A0Ttcw1C0CnjIJ2-okY0J7ct46LP6Cvjlo2J7M74ysN3Zsdnk89cks8IsCIkSGvKMnL2UpFNWZ6oZ0klGFIyzuRc6ipPZ0eDb4idsLYShXs8A8BrFKH5kJ60rgDuudyAKc7aZwFmBqRZuxmadb2Q4cSqNh4FJoob-AhGVcjRY1ngISSLwmVXJG1VG-KQGchA7orxnZ7rxL5Jtgga_et96oXXoKPQ-J0"/>
+<div class="absolute inset-0 flex items-center justify-center flex-col">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="text-[9px] uppercase tracking-tighter text-on-surface mt-1">Current Base: Tokyo Studio A</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Visual Polish: Background Gradients -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
+<div class="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary-container/5 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-secondary-container/5 blur-[100px] rounded-full"></div>
+</div>
+</body></html>

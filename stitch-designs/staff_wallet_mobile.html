@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Staff Wallets | Obsidian Command</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#e2e2e8",
+              "on-secondary": "#00363d",
+              "on-primary": "#002388",
+              "on-secondary-container": "#00616d",
+              "on-error": "#690005",
+              "tertiary-fixed-dim": "#fbbc00",
+              "on-background": "#e2e2e8",
+              "surface-container-lowest": "#0c0e12",
+              "surface-container-low": "#1a1c20",
+              "on-error-container": "#ffdad6",
+              "surface-dim": "#111318",
+              "on-primary-container": "#efefff",
+              "tertiary": "#fbbc00",
+              "on-secondary-fixed-variant": "#004f58",
+              "on-surface": "#e2e2e8",
+              "secondary": "#bdf4ff",
+              "surface-bright": "#37393e",
+              "primary-fixed-dim": "#b8c3ff",
+              "secondary-fixed": "#9cf0ff",
+              "on-primary-fixed": "#001356",
+              "primary-fixed": "#dde1ff",
+              "surface-tint": "#b8c3ff",
+              "outline": "#8e90a2",
+              "surface-container-high": "#282a2e",
+              "surface": "#111318",
+              "on-tertiary-fixed-variant": "#5c4300",
+              "on-tertiary-fixed": "#261a00",
+              "secondary-container": "#00e3fd",
+              "tertiary-fixed": "#ffdfa0",
+              "secondary-fixed-dim": "#00daf3",
+              "primary-container": "#2e5bff",
+              "outline-variant": "#434656",
+              "inverse-primary": "#124af0",
+              "tertiary-container": "#8c6700",
+              "surface-container": "#1e2024",
+              "error-container": "#93000a",
+              "on-primary-fixed-variant": "#0035be",
+              "inverse-on-surface": "#2f3035",
+              "surface-variant": "#333539",
+              "on-tertiary-container": "#ffeed3",
+              "surface-container-highest": "#333539",
+              "on-tertiary": "#402d00",
+              "on-surface-variant": "#c4c5d9",
+              "primary": "#b8c3ff",
+              "background": "#111318",
+              "error": "#ffb4ab",
+              "on-secondary-fixed": "#001f24"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-panel {
+        background: rgba(51, 53, 57, 0.6);
+        backdrop-filter: blur(12px);
+        outline: 0.5px solid rgba(142, 144, 162, 0.2);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#111318]/60 backdrop-blur-xl border-b-[0.5px] border-[#44474e]/20 shadow-[0_12_32px_rgba(46,91,255,0.1)] flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img alt="Executive User Profile" data-alt="Executive user profile avatar placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAappBu37N_7E37gWuanztbDM5ECVQMvmpenDXON3PG_umjaGQDwwEY-NLTI8UIDADzv4D-f3qbXfJRaEhpT7cln01qKuYNdKp8YDdpzyqN89es-wq3kb7HfyoR8U9lcLZNjvBEobNVjvSAXPIiOTS1Qv62RrLNDQu_N8p65EBQSNzPaDW-NRX9MgZr0Kxavc-9kYouUiQdB-rQTd6aaM4PdF4Vhrbhd8Bz939NEvOWJEvQsphm_n4TZlCEG8WE8HlMs_ER3CM-3CU"/>
+</div>
+<span class="font-manrope font-light text-xl tracking-tight text-[#e2e2e8]">Obsidian Command</span>
+</div>
+<div class="font-manrope text-sm tracking-wider uppercase text-[#b8c3ff] px-3 py-1 bg-[#b8c3ff]/10 rounded-lg">
+            LIVE: $42.5k
+        </div>
+</header>
+<main class="pt-20 px-4 space-y-6">
+<!-- Dashboard Header Section -->
+<section class="mt-4">
+<h1 class="font-headline font-light text-2xl tracking-tight text-on-surface">スタッフ小口現金管理</h1>
+<p class="font-label text-xs uppercase tracking-[0.05em] text-on-surface-variant mt-1">Staff Wallets &amp; Utilization</p>
+</section>
+<!-- Stats Overview (Asymmetric Bento Lite) -->
+<div class="grid grid-cols-2 gap-3">
+<div class="glass-panel p-4 rounded-xl flex flex-col justify-between h-32">
+<span class="font-label text-[10px] uppercase tracking-wider text-secondary">Total Allocated</span>
+<div class="mt-auto">
+<span class="text-2xl font-headline font-semibold">¥1.2M</span>
+<div class="h-1 w-8 bg-secondary mt-2"></div>
+</div>
+</div>
+<div class="glass-panel p-4 rounded-xl flex flex-col justify-between h-32">
+<span class="font-label text-[10px] uppercase tracking-wider text-primary">Live Burn Rate</span>
+<div class="mt-auto">
+<span class="text-2xl font-headline font-semibold">12%</span>
+<div class="h-1 w-8 bg-primary mt-2"></div>
+</div>
+</div>
+</div>
+<!-- Staff List -->
+<div class="space-y-4">
+<!-- Staff Item 1 -->
+<div class="glass-panel rounded-xl p-4 transition-colors active:scale-95 duration-200">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center border-[0.5px] border-outline-variant/30">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+<div>
+<h3 class="font-headline font-medium text-on-surface">Kenta Tanaka</h3>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest font-label">Production Manager</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs text-on-surface-variant font-label uppercase">Remaining</p>
+<p class="font-headline font-bold text-secondary">¥142,500</p>
+</div>
+</div>
+<!-- Utilization Bar -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-[10px] font-label uppercase text-on-surface-variant">
+<span>Utilization</span>
+<span>71%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[71%] rounded-full shadow-[0_0_8px_rgba(0,227,253,0.4)]"></div>
+</div>
+</div>
+</div>
+<!-- Staff Item 2 -->
+<div class="glass-panel rounded-xl p-4 transition-colors active:scale-95 duration-200">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center border-[0.5px] border-outline-variant/30">
+<span class="material-symbols-outlined text-primary">palette</span>
+</div>
+<div>
+<h3 class="font-headline font-medium text-on-surface">Misaki Sato</h3>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest font-label">Lead Stylist</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs text-on-surface-variant font-label uppercase">Remaining</p>
+<p class="font-headline font-bold text-secondary">¥195,000</p>
+</div>
+</div>
+<!-- Utilization Bar -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-[10px] font-label uppercase text-on-surface-variant">
+<span>Utilization</span>
+<span>35%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[35%] rounded-full shadow-[0_0_8px_rgba(0,227,253,0.4)]"></div>
+</div>
+</div>
+</div>
+<!-- Staff Item 3 -->
+<div class="glass-panel rounded-xl p-4 transition-colors active:scale-95 duration-200">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center border-[0.5px] border-outline-variant/30">
+<span class="material-symbols-outlined text-primary">camera_video</span>
+</div>
+<div>
+<h3 class="font-headline font-medium text-on-surface">Hiroshi Yamamoto</h3>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest font-label">Key Grip</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs text-on-surface-variant font-label uppercase">Remaining</p>
+<p class="font-headline font-bold text-tertiary">¥12,400</p>
+</div>
+</div>
+<!-- Utilization Bar -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-[10px] font-label uppercase text-on-surface-variant">
+<span>Utilization</span>
+<span>94%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[94%] rounded-full shadow-[0_0_8px_rgba(251,188,0,0.4)]"></div>
+</div>
+</div>
+</div>
+<!-- Staff Item 4 -->
+<div class="glass-panel rounded-xl p-4 transition-colors active:scale-95 duration-200">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center border-[0.5px] border-outline-variant/30">
+<span class="material-symbols-outlined text-primary">restaurant</span>
+</div>
+<div>
+<h3 class="font-headline font-medium text-on-surface">Yuki Ito</h3>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest font-label">Catering Lead</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs text-on-surface-variant font-label uppercase">Remaining</p>
+<p class="font-headline font-bold text-secondary">¥88,000</p>
+</div>
+</div>
+<!-- Utilization Bar -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-[10px] font-label uppercase text-on-surface-variant">
+<span>Utilization</span>
+<span>56%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[56%] rounded-full shadow-[0_0_8px_rgba(0,227,253,0.4)]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Add Staff Button Floating Context -->
+<div class="flex justify-center pt-4">
+<button class="bg-primary-container text-on-primary-container font-headline font-semibold py-3 px-8 rounded-lg flex items-center gap-2 shadow-[0_8px_24px_rgba(46,91,255,0.3)] active:scale-95 duration-200">
+<span class="material-symbols-outlined">add</span>
+                スタッフを追加
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-[#111318]/80 backdrop-blur-2xl border-t-[0.5px] border-[#44474e]/20 shadow-[0_-8px_24px_rgba(0,0,0,0.5)] flex justify-around items-center h-20 pb-safe px-4">
+<a class="flex flex-col items-center justify-center text-[#e2e2e8]/50 py-1 px-3 hover:text-[#b8c3ff] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter text-[10px] font-medium tracking-[0.05em] uppercase mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#e2e2e8]/50 py-1 px-3 hover:text-[#b8c3ff] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-inter text-[10px] font-medium tracking-[0.05em] uppercase mt-1">Receipts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00e3fd] bg-[#2e5bff]/10 rounded-lg py-1 px-3 hover:text-[#b8c3ff] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-inter text-[10px] font-medium tracking-[0.05em] uppercase mt-1">Staff</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#e2e2e8]/50 py-1 px-3 hover:text-[#b8c3ff] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-inter text-[10px] font-medium tracking-[0.05em] uppercase mt-1">Settings</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#e2e2e8",
+              "on-secondary": "#00363d",
+              "on-primary": "#002388",
+              "on-secondary-container": "#00616d",
+              "on-error": "#690005",
+              "tertiary-fixed-dim": "#fbbc00",
+              "on-background": "#e2e2e8",
+              "surface-container-lowest": "#0c0e12",
+              "surface-container-low": "#1a1c20",
+              "on-error-container": "#ffdad6",
+              "surface-dim": "#111318",
+              "on-primary-container": "#efefff",
+              "tertiary": "#fbbc00",
+              "on-secondary-fixed-variant": "#004f58",
+              "on-surface": "#e2e2e8",
+              "secondary": "#bdf4ff",
+              "surface-bright": "#37393e",
+              "primary-fixed-dim": "#b8c3ff",
+              "secondary-fixed": "#9cf0ff",
+              "on-primary-fixed": "#001356",
+              "primary-fixed": "#dde1ff",
+              "surface-tint": "#b8c3ff",
+              "outline": "#8e90a2",
+              "surface-container-high": "#282a2e",
+              "surface": "#111318",
+              "on-tertiary-fixed-variant": "#5c4300",
+              "on-tertiary-fixed": "#261a00",
+              "secondary-container": "#00e3fd",
+              "tertiary-fixed": "#ffdfa0",
+              "secondary-fixed-dim": "#00daf3",
+              "primary-container": "#2e5bff",
+              "outline-variant": "#434656",
+              "inverse-primary": "#124af0",
+              "tertiary-container": "#8c6700",
+              "surface-container": "#1e2024",
+              "error-container": "#93000a",
+              "on-primary-fixed-variant": "#0035be",
+              "inverse-on-surface": "#2f3035",
+              "surface-variant": "#333539",
+              "on-tertiary-container": "#ffeed3",
+              "surface-container-highest": "#333539",
+              "on-tertiary": "#402d00",
+              "on-surface-variant": "#c4c5d9",
+              "primary": "#b8c3ff",
+              "background": "#111318",
+              "error": "#ffb4ab",
+              "on-secondary-fixed": "#001f24"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .glass-panel {
+        background: rgba(51, 53, 57, 0.6);
+        backdrop-filter: blur(12px);
+        outline: 0.5px solid rgba(142, 144, 162, 0.2);
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#111318]/60 backdrop-blur-xl border-b-[0.5px] border-[#44474e]/20 shadow-[0_12_32px_rgba(46,91,255,0.1)]">
+<div class="flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden ring-1 ring-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="Executive User Profile Portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCleFee4QbSpg4L8WICx4soxm2IO2MrwqCtmdVTo4hVbyfaNEQdQtSokuBzM97jXbG60LOYq7yTP7g61TBjKLOSROQV40dCLw-QZPb2CC_HUA6gI7veJ9N8-eFfdedAqdhOT2WvXCq4k9GD5ROcIO0c-71g8ev13aUcYSDR6gtvbxlbygMEoLzsmxnmA1lauluC7Y-807mDTIds8q59CAh9VYazqcdnBmdyElogWaCE_yvb_YyDirdbjlNZdBFbvIgtIXIy588KX8Y"/>
+</div>
+<h1 class="font-headline font-light text-xl tracking-tight text-[#e2e2e8]">Obsidian Command</h1>
+</div>
+<div class="font-headline text-sm tracking-wider uppercase text-[#b8c3ff] font-bold">
+                LIVE: $42.5k
+            </div>
+</div>
+</header>
+<main class="pt-20 pb-24 px-4 space-y-6">
+<!-- Top Section: Real-time Stats -->
+<div class="grid grid-cols-1 gap-4">
+<!-- Burn Rate Card -->
+<div class="glass-panel p-5 rounded-xl flex flex-col justify-between relative overflow-hidden group">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-medium">Real-time Burn Rate</span>
+<span class="material-symbols-outlined text-secondary text-lg">bolt</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-3xl font-light text-secondary-container">¥1,500</span>
+<span class="font-label text-sm text-secondary-container/70">/hr</span>
+</div>
+<div class="mt-4 h-1 w-full bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container w-2/3 shadow-[0_0_8px_rgba(0,227,253,0.5)]"></div>
+</div>
+</div>
+<!-- Exhaustion Alert -->
+<div class="glass-panel p-5 rounded-xl border-l-2 border-tertiary">
+<div class="flex items-center gap-3 mb-1">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="font-label text-[10px] uppercase tracking-widest text-tertiary-fixed-dim font-bold">Exhaustion Prediction Alert</span>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-headline text-4xl font-light text-on-surface tracking-tighter">18:45</span>
+<span class="font-label text-[10px] text-on-surface-variant mb-1">THRESHOLD REACHED</span>
+</div>
+</div>
+</div>
+<!-- Middle Section: Budget Ring Chart -->
+<section class="glass-panel p-6 rounded-xl relative">
+<h2 class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-medium mb-8 text-center">Current Budget Status</h2>
+<div class="relative flex items-center justify-center">
+<!-- SVG Ring Chart -->
+<svg class="w-48 h-48 transform -rotate-90">
+<circle class="text-surface-container-lowest" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-primary-container" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-dasharray="552.92" stroke-dashoffset="495.4" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline text-4xl font-extralight text-on-surface tracking-tighter">10.4%</span>
+<span class="font-label text-[10px] uppercase text-on-surface-variant tracking-[0.2em] mt-1">Utilization</span>
+</div>
+</div>
+<div class="mt-8 grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-3 rounded-lg border-l border-primary-container/30">
+<p class="font-label text-[9px] text-on-surface-variant uppercase tracking-wider">Allocated</p>
+<p class="font-headline text-lg font-medium text-on-surface">¥15.2M</p>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg border-l border-outline-variant/30">
+<p class="font-label text-[9px] text-on-surface-variant uppercase tracking-wider">Remaining</p>
+<p class="font-headline text-lg font-medium text-on-surface">¥13.6M</p>
+</div>
+</div>
+</section>
+<!-- Bottom Section: Recent Transactions Ledger -->
+<section class="space-y-4">
+<div class="flex justify-between items-center px-2">
+<h3 class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-medium">Recent Transactions Ledger</h3>
+<span class="font-label text-[10px] text-primary cursor-pointer hover:underline">VIEW ALL</span>
+</div>
+<div class="space-y-2">
+<!-- Row 1 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest/50 rounded-lg group active:scale-[0.98] transition-all">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">camera_roll</span>
+</div>
+<div>
+<p class="font-body text-sm font-medium text-on-surface">Arri Rental Tokyo</p>
+<p class="font-label text-[10px] text-on-surface-variant">Camera &amp; Optics</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline text-sm text-secondary-container">¥450,000</p>
+<p class="font-label text-[10px] text-on-surface-variant">14:22</p>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low/50 rounded-lg group active:scale-[0.98] transition-all">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">restaurant</span>
+</div>
+<div>
+<p class="font-body text-sm font-medium text-on-surface">Catering Services</p>
+<p class="font-label text-[10px] text-on-surface-variant">Unit Services</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline text-sm text-on-surface">¥85,200</p>
+<p class="font-label text-[10px] text-on-surface-variant">12:05</p>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest/50 rounded-lg group active:scale-[0.98] transition-all">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">local_taxi</span>
+</div>
+<div>
+<p class="font-body text-sm font-medium text-on-surface">Location Transport</p>
+<p class="font-label text-[10px] text-on-surface-variant">Logistics</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline text-sm text-on-surface">¥12,400</p>
+<p class="font-label text-[10px] text-on-surface-variant">10:30</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-[#111318]/80 backdrop-blur-2xl border-t-[0.5px] border-[#44474e]/20 shadow-[0_-8px_24px_rgba(0,0,0,0.5)]">
+<div class="flex justify-around items-center h-20 pb-safe px-4">
+<!-- Dashboard (Active) -->
+<button class="flex flex-col items-center justify-center text-[#00e3fd] bg-[#2e5bff]/10 rounded-lg py-1 px-3 active:scale-90 duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-inter text-[10px] font-medium tracking-[0.05em] uppercase mt-1">Dashboard</span>
+</button>
+<!-- Receipts -->
+<button class="flex flex-col items-center justify-center text-[#e2e2e8]/50 py-1 px-3 hover:text-[#b8c3ff] transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-inter text-[10px] font-medium tracking-[0.05em] uppercase mt-1">Receipts</span>
+</button>
+<!-- Staff -->
+<button class="flex flex-col items-center justify-center text-[#e2e2e8]/50 py-1 px-3 hover:text-[#b8c3ff] transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-inter text-[10px] font-medium tracking-[0.05em] uppercase mt-1">Staff</span>
+</button>
+<!-- Settings -->
+<button class="flex flex-col items-center justify-center text-[#e2e2e8]/50 py-1 px-3 hover:text-[#b8c3ff] transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-inter text-[10px] font-medium tracking-[0.05em] uppercase mt-1">Settings</span>
+</button>
+</div>
+</nav>
+</body></html>

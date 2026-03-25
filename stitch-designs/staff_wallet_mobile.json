@@ -1,0 +1,355 @@
+{
+  "screenshot": {
+    "name": "projects/6794628829678361214/files/5ef369af4ae74c9c93bbff450a2c49e9",
+    "downloadUrl": "https://lh3.googleusercontent.com/aida/ADBb0uiyzt299AthLQ2F7CbympoB6dCxGwCCR4zhHzhbnuZCYRoUcoCmPNgGL9nqHq_kA1m5Ug5q_0rnPsTkvB-WNLBu41k49PqGYacdpsXFNNP1IhQ-m9R-msfXTkSgDFYfysXs1Pc8el3-FRduHrldfcPwW-PsRgYQAwOZF__CqUalZtLQ4VLtZkFD8nseIw-qPYLsf-dXeaO7J0pICXW6sKmaVcd0ryVcSbX-HlvyBxzDsdBwVnKDZd3Zgvo"
+  },
+  "htmlCode": {
+    "name": "projects/6794628829678361214/files/e3392f67efe0489daf3e652d63ab6ef1",
+    "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2ZkNWU1M2ZmNTAyZTQwMTU5YjFhYWUyMzkyNmFmZDRjEgsSBxD3pKipgwsYAZIBIwoKcHJvamVjdF9pZBIVQhM2Nzk0NjI4ODI5Njc4MzYxMjE0&filename=&opi=89354086",
+    "mimeType": "text/html"
+  },
+  "id": "d515b547804c402bb633e00bc8fb1f96",
+  "generatedBy": "figaro_agent",
+  "width": "780",
+  "height": "2032",
+  "title": "スタッフ別ウォレット (Mobile)",
+  "prompt": "Staff Wallets screen (Obsidian Command) for mobile. List of staff members with their petty cash status: Kenta Tanaka (Production Manager) ¥142,500 remaining, Misaki Sato (Lead Stylist) ¥195,000 remaining, etc. Show utilization progress bars for each. Dark theme, sleek list items. Japanese language.",
+  "name": "projects/6794628829678361214/screens/d515b547804c402bb633e00bc8fb1f96",
+  "theme": {
+    "colorMode": "DARK",
+    "font": "MANROPE",
+    "roundness": "ROUND_FOUR",
+    "customColor": "#2E5BFF",
+    "headlineFont": "MANROPE",
+    "bodyFont": "INTER",
+    "labelFont": "INTER",
+    "namedColors": {
+      "error_container": "#93000a",
+      "inverse_surface": "#e2e2e8",
+      "on_surface": "#e2e2e8",
+      "outline_variant": "#434656",
+      "secondary_container": "#00e3fd",
+      "tertiary": "#fbbc00",
+      "surface_container_highest": "#333539",
+      "tertiary_fixed": "#ffdfa0",
+      "surface_container_lowest": "#0c0e12",
+      "on_secondary_fixed": "#001f24",
+      "on_tertiary": "#402d00",
+      "on_primary_fixed_variant": "#0035be",
+      "secondary_fixed_dim": "#00daf3",
+      "surface_container_high": "#282a2e",
+      "on_primary": "#002388",
+      "on_tertiary_container": "#ffeed3",
+      "surface_bright": "#37393e",
+      "error": "#ffb4ab",
+      "tertiary_fixed_dim": "#fbbc00",
+      "surface": "#111318",
+      "inverse_on_surface": "#2f3035",
+      "primary_fixed": "#dde1ff",
+      "surface_container_low": "#1a1c20",
+      "on_error": "#690005",
+      "on_primary_container": "#efefff",
+      "outline": "#8e90a2",
+      "on_surface_variant": "#c4c5d9",
+      "on_error_container": "#ffdad6",
+      "secondary_fixed": "#9cf0ff",
+      "inverse_primary": "#124af0",
+      "on_tertiary_fixed": "#261a00",
+      "on_primary_fixed": "#001356",
+      "tertiary_container": "#8c6700",
+      "primary_container": "#2e5bff",
+      "on_secondary_fixed_variant": "#004f58",
+      "secondary": "#bdf4ff",
+      "surface_tint": "#b8c3ff",
+      "primary": "#b8c3ff",
+      "on_secondary_container": "#00616d",
+      "on_tertiary_fixed_variant": "#5c4300",
+      "surface_dim": "#111318",
+      "background": "#111318",
+      "surface_variant": "#333539",
+      "surface_container": "#1e2024",
+      "primary_fixed_dim": "#b8c3ff",
+      "on_background": "#e2e2e8",
+      "on_secondary": "#00363d"
+    },
+    "designMd": "```markdown
+# Design System Specification: The Command Console
+
+## 1. Overview & Creative North Star
+**Creative North Star: \"The Obsidian Lens\"**
+This design system is engineered for the high-stakes environment of film production finance. It rejects the \"SaaS-standard\" white-label aesthetic in favor of a bespoke, cinematic interface. The goal is to evoke the feeling of a high-end, proprietary command center—think \"Mission Control\" meets \"Executive Suite.\"
+
+To move beyond the template look, we utilize **Intentional Asymmetry** and **Tonal Depth**. The UI is not a flat plane; it is a multi-layered environment of dark glass. Information density is prioritized, but clarity is maintained through rigorous spacing and the \"The No-Line Rule.\" By prioritizing the \"Obsidian\" depth over traditional borders, we create an interface that feels infinite and sophisticated.
+
+---
+
+## 2. Colors
+Our palette is rooted in `background (#111318)`. It is not pitch black, but a deep, charcoal obsidian that allows for subtle luminosity.
+
+### The Color Roles
+- **Primary (Royal Blue):** `primary (#b8c3ff)` and `primary_container (#2e5bff)`. Use these for intent and primary action pathways.
+- **Secondary (Electric Cyan):** `secondary (#bdf4ff)` and `secondary_container (#00e3fd)`. This is our \"Data Pulse.\" Use it strictly for real-time updates, active tickers, and live production feeds.
+- **Tertiary (Amber):** `tertiary (#fbbc00)`. Reserved for warnings, critical thresholds, and high-priority budget variances.
+- **Neutral Surface Hierarchy:** Use `surface_container_lowest` through `highest` to define the \"glass\" layers.
+
+### The \"No-Line\" Rule
+**Prohibit 1px solid borders for sectioning.** Structural boundaries must be defined solely through:
+1. **Background Color Shifts:** A `surface_container_low` sidebar sitting against a `surface` background.
+2. **Tonal Transitions:** Using the spacing scale (`8` or `10`) to create a \"void\" that separates modules.
+
+### The \"Glass & Gradient\" Rule
+To achieve a \"proprietary software\" feel, floating modules (modals, dropdowns, hovered cards) must use **Glassmorphism**.
+- **Fill:** `surface_container_highest` at 60% opacity.
+- **Backdrop Blur:** 12px to 20px.
+- **Edge Polish:** Use a 0.5px \"Ghost Border\" using `outline_variant` at 20% opacity to catch the \"light\" at the edge of the glass.
+
+---
+
+## 3. Typography
+The system uses a dual-font strategy to balance editorial authority with technical precision.
+
+- **Display & Headlines (Manrope):** Chosen for its geometric elegance and high-end cinematic feel. Use `display-lg` and `headline-md` for top-level budget totals or production titles. This is the \"Voice\" of the system.
+- **Data & UI (Inter):** The workhorse for the console. Used for `body` and `label` tiers. Its tall x-height and technical clarity make it perfect for dense tabular financial data.
+
+**Hierarchy as Identity:**
+- Large, low-weight (Light/Regular) Manrope headlines create an air of \"Executive Oversight.\"
+- Small, uppercase Inter labels with `0.05em` letter-spacing provide the \"Technical Precision\" required for a production console.
+
+---
+
+## 4. Elevation & Depth
+In a dark, dense UI, traditional shadows often look muddy. We use **Tonal Layering**.
+
+### The Layering Principle
+Stack containers to define importance:
+- **Base Level:** `surface` (#111318).
+- **Secondary Modules:** `surface_container_low`.
+- **Active Workspace:** `surface_container_high`.
+- **Floating/Active Elements:** Glassmorphism with `surface_bright`.
+
+### Ambient Shadows & Glowing States
+When an element must float (e.g., a critical alert), use a **Tinted Ambient Shadow**:
+- **Shadow:** 0px 12px 32px.
+- **Color:** A 10% opacity version of `surface_tint`.
+- **Focus States:** Instead of a border, use a \"Glow.\" Apply an outer-glow (drop-shadow) using `primary` at 30% opacity with a 4px blur.
+
+---
+
+## 5. Components
+
+### Buttons
+- **Primary:** `primary_container` fill. For the \"Command Center\" feel, use a subtle linear gradient from `primary` to `primary_container`.
+- **Secondary/Ghost:** No fill. `0.5px` border of `outline_variant`. On hover, transition to a 10% `primary` background.
+- **Rounding:** Strictly `md` (0.375rem). Avoid fully rounded \"pill\" buttons to maintain a professional, architectural aesthetic.
+
+### Data Tables (The Core)
+- **Header:** `surface_container_highest` background, no borders.
+- **Rows:** Alternate between `surface` and `surface_container_lowest`. **Forbid horizontal dividers.** Use vertical white space (`spacing 2`) to separate entries.
+- **Real-time Cells:** Use `secondary` (Cyan) for text to indicate live data streams.
+
+### Input Fields
+- **Default State:** `surface_container_lowest` background. 0.5px `outline_variant` border (Ghost Border).
+- **Active State:** Border shifts to `primary`, with a subtle `primary` outer glow.
+- **Typography:** Labels should always use `label-sm` in `on_surface_variant`.
+
+### Precision Chips
+- Used for production status (e.g., \"Post-Production,\" \"In-Camera\").
+- **Styling:** Small, rectangular (radius `sm`), using `surface_container_highest` with `label-sm` text. No heavy fills.
+
+---
+
+## 6. Do’s and Don'ts
+
+### Do:
+- **Use the Spacing Scale Religiously:** Precise gaps (using `spacing 4` or `8`) are what make a dense UI feel \"organized\" rather than \"cluttered.\"
+- **Embrace \"The Void\":** Let the obsidian background breathe. Not every pixel needs a container.
+- **Optimize for Desktop:** Use `body-sm` (0.75rem) for secondary data to maximize information density for expert users.
+
+### Don't:
+- **Don't use 1px Borders:** It breaks the cinematic immersion. Use the 0.5px \"Ghost Border\" or nothing at all.
+- **Don't use Pure White:** Avoid `#FFFFFF`. Always use `on_surface` (#e2e2e8) to prevent eye strain in dark environments.
+- **Don't use Standard Drop Shadows:** Stick to tonal shifts and tinted ambient glows.
+- **Don't use Dividers:** Avoid horizontal lines between list items or table rows. Use `surface` color shifts to separate content.",
+    "colorVariant": "FIDELITY",
+    "overridePrimaryColor": "#2E5BFF",
+    "overrideSecondaryColor": "#00E5FF",
+    "overrideTertiaryColor": "#FFBF00",
+    "overrideNeutralColor": "#0A0C10",
+    "spacingScale": 1
+  },
+  "deviceType": "MOBILE",
+  "screenType": "DESIGN",
+  "screenMetadata": {
+    "agentType": "HATTER_AGENT",
+    "status": "COMPLETE"
+  },
+  "designSystem": {
+    "name": "assets/e255feb06cf04eaca510bd928b832dc9",
+    "designSystem": {
+      "displayName": "Obsidian Command",
+      "theme": {
+        "colorMode": "DARK",
+        "font": "MANROPE",
+        "roundness": "ROUND_FOUR",
+        "customColor": "#2E5BFF",
+        "headlineFont": "MANROPE",
+        "bodyFont": "INTER",
+        "labelFont": "INTER",
+        "namedColors": {
+          "error_container": "#93000a",
+          "inverse_surface": "#e2e2e8",
+          "on_surface": "#e2e2e8",
+          "secondary_container": "#00e3fd",
+          "outline_variant": "#434656",
+          "tertiary": "#fbbc00",
+          "tertiary_fixed": "#ffdfa0",
+          "surface_container_highest": "#333539",
+          "surface_container_lowest": "#0c0e12",
+          "on_secondary_fixed": "#001f24",
+          "on_tertiary": "#402d00",
+          "on_primary_fixed_variant": "#0035be",
+          "secondary_fixed_dim": "#00daf3",
+          "surface_container_high": "#282a2e",
+          "on_primary": "#002388",
+          "on_tertiary_container": "#ffeed3",
+          "surface_bright": "#37393e",
+          "error": "#ffb4ab",
+          "tertiary_fixed_dim": "#fbbc00",
+          "surface": "#111318",
+          "inverse_on_surface": "#2f3035",
+          "primary_fixed": "#dde1ff",
+          "surface_container_low": "#1a1c20",
+          "on_error": "#690005",
+          "on_primary_container": "#efefff",
+          "outline": "#8e90a2",
+          "on_surface_variant": "#c4c5d9",
+          "on_error_container": "#ffdad6",
+          "secondary_fixed": "#9cf0ff",
+          "inverse_primary": "#124af0",
+          "on_tertiary_fixed": "#261a00",
+          "on_primary_fixed": "#001356",
+          "on_secondary_fixed_variant": "#004f58",
+          "primary_container": "#2e5bff",
+          "tertiary_container": "#8c6700",
+          "secondary": "#bdf4ff",
+          "on_secondary_container": "#00616d",
+          "primary": "#b8c3ff",
+          "surface_tint": "#b8c3ff",
+          "on_tertiary_fixed_variant": "#5c4300",
+          "surface_dim": "#111318",
+          "background": "#111318",
+          "primary_fixed_dim": "#b8c3ff",
+          "surface_container": "#1e2024",
+          "surface_variant": "#333539",
+          "on_background": "#e2e2e8",
+          "on_secondary": "#00363d"
+        },
+        "designMd": "```markdown
+# Design System Specification: The Command Console
+
+## 1. Overview & Creative North Star
+**Creative North Star: \"The Obsidian Lens\"**
+This design system is engineered for the high-stakes environment of film production finance. It rejects the \"SaaS-standard\" white-label aesthetic in favor of a bespoke, cinematic interface. The goal is to evoke the feeling of a high-end, proprietary command center—think \"Mission Control\" meets \"Executive Suite.\"
+
+To move beyond the template look, we utilize **Intentional Asymmetry** and **Tonal Depth**. The UI is not a flat plane; it is a multi-layered environment of dark glass. Information density is prioritized, but clarity is maintained through rigorous spacing and the \"The No-Line Rule.\" By prioritizing the \"Obsidian\" depth over traditional borders, we create an interface that feels infinite and sophisticated.
+
+---
+
+## 2. Colors
+Our palette is rooted in `background (#111318)`. It is not pitch black, but a deep, charcoal obsidian that allows for subtle luminosity.
+
+### The Color Roles
+- **Primary (Royal Blue):** `primary (#b8c3ff)` and `primary_container (#2e5bff)`. Use these for intent and primary action pathways.
+- **Secondary (Electric Cyan):** `secondary (#bdf4ff)` and `secondary_container (#00e3fd)`. This is our \"Data Pulse.\" Use it strictly for real-time updates, active tickers, and live production feeds.
+- **Tertiary (Amber):** `tertiary (#fbbc00)`. Reserved for warnings, critical thresholds, and high-priority budget variances.
+- **Neutral Surface Hierarchy:** Use `surface_container_lowest` through `highest` to define the \"glass\" layers.
+
+### The \"No-Line\" Rule
+**Prohibit 1px solid borders for sectioning.** Structural boundaries must be defined solely through:
+1. **Background Color Shifts:** A `surface_container_low` sidebar sitting against a `surface` background.
+2. **Tonal Transitions:** Using the spacing scale (`8` or `10`) to create a \"void\" that separates modules.
+
+### The \"Glass & Gradient\" Rule
+To achieve a \"proprietary software\" feel, floating modules (modals, dropdowns, hovered cards) must use **Glassmorphism**.
+- **Fill:** `surface_container_highest` at 60% opacity.
+- **Backdrop Blur:** 12px to 20px.
+- **Edge Polish:** Use a 0.5px \"Ghost Border\" using `outline_variant` at 20% opacity to catch the \"light\" at the edge of the glass.
+
+---
+
+## 3. Typography
+The system uses a dual-font strategy to balance editorial authority with technical precision.
+
+- **Display & Headlines (Manrope):** Chosen for its geometric elegance and high-end cinematic feel. Use `display-lg` and `headline-md` for top-level budget totals or production titles. This is the \"Voice\" of the system.
+- **Data & UI (Inter):** The workhorse for the console. Used for `body` and `label` tiers. Its tall x-height and technical clarity make it perfect for dense tabular financial data.
+
+**Hierarchy as Identity:**
+- Large, low-weight (Light/Regular) Manrope headlines create an air of \"Executive Oversight.\"
+- Small, uppercase Inter labels with `0.05em` letter-spacing provide the \"Technical Precision\" required for a production console.
+
+---
+
+## 4. Elevation & Depth
+In a dark, dense UI, traditional shadows often look muddy. We use **Tonal Layering**.
+
+### The Layering Principle
+Stack containers to define importance:
+- **Base Level:** `surface` (#111318).
+- **Secondary Modules:** `surface_container_low`.
+- **Active Workspace:** `surface_container_high`.
+- **Floating/Active Elements:** Glassmorphism with `surface_bright`.
+
+### Ambient Shadows & Glowing States
+When an element must float (e.g., a critical alert), use a **Tinted Ambient Shadow**:
+- **Shadow:** 0px 12px 32px.
+- **Color:** A 10% opacity version of `surface_tint`.
+- **Focus States:** Instead of a border, use a \"Glow.\" Apply an outer-glow (drop-shadow) using `primary` at 30% opacity with a 4px blur.
+
+---
+
+## 5. Components
+
+### Buttons
+- **Primary:** `primary_container` fill. For the \"Command Center\" feel, use a subtle linear gradient from `primary` to `primary_container`.
+- **Secondary/Ghost:** No fill. `0.5px` border of `outline_variant`. On hover, transition to a 10% `primary` background.
+- **Rounding:** Strictly `md` (0.375rem). Avoid fully rounded \"pill\" buttons to maintain a professional, architectural aesthetic.
+
+### Data Tables (The Core)
+- **Header:** `surface_container_highest` background, no borders.
+- **Rows:** Alternate between `surface` and `surface_container_lowest`. **Forbid horizontal dividers.** Use vertical white space (`spacing 2`) to separate entries.
+- **Real-time Cells:** Use `secondary` (Cyan) for text to indicate live data streams.
+
+### Input Fields
+- **Default State:** `surface_container_lowest` background. 0.5px `outline_variant` border (Ghost Border).
+- **Active State:** Border shifts to `primary`, with a subtle `primary` outer glow.
+- **Typography:** Labels should always use `label-sm` in `on_surface_variant`.
+
+### Precision Chips
+- Used for production status (e.g., \"Post-Production,\" \"In-Camera\").
+- **Styling:** Small, rectangular (radius `sm`), using `surface_container_highest` with `label-sm` text. No heavy fills.
+
+---
+
+## 6. Do’s and Don'ts
+
+### Do:
+- **Use the Spacing Scale Religiously:** Precise gaps (using `spacing 4` or `8`) are what make a dense UI feel \"organized\" rather than \"cluttered.\"
+- **Embrace \"The Void\":** Let the obsidian background breathe. Not every pixel needs a container.
+- **Optimize for Desktop:** Use `body-sm` (0.75rem) for secondary data to maximize information density for expert users.
+
+### Don't:
+- **Don't use 1px Borders:** It breaks the cinematic immersion. Use the 0.5px \"Ghost Border\" or nothing at all.
+- **Don't use Pure White:** Avoid `#FFFFFF`. Always use `on_surface` (#e2e2e8) to prevent eye strain in dark environments.
+- **Don't use Standard Drop Shadows:** Stick to tonal shifts and tinted ambient glows.
+- **Don't use Dividers:** Avoid horizontal lines between list items or table rows. Use `surface` color shifts to separate content.",
+        "colorVariant": "FIDELITY",
+        "overridePrimaryColor": "#2E5BFF",
+        "overrideSecondaryColor": "#00E5FF",
+        "overrideTertiaryColor": "#FFBF00",
+        "overrideNeutralColor": "#0A0C10",
+        "spacingScale": 1
+      }
+    },
+    "version": "1"
+  }
+}

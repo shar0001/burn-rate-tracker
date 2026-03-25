@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#e2e2e8",
+              "on-secondary": "#00363d",
+              "on-primary": "#002388",
+              "on-secondary-container": "#00616d",
+              "on-error": "#690005",
+              "tertiary-fixed-dim": "#fbbc00",
+              "on-background": "#e2e2e8",
+              "surface-container-lowest": "#0c0e12",
+              "surface-container-low": "#1a1c20",
+              "on-error-container": "#ffdad6",
+              "surface-dim": "#111318",
+              "on-primary-container": "#efefff",
+              "tertiary": "#fbbc00",
+              "on-secondary-fixed-variant": "#004f58",
+              "on-surface": "#e2e2e8",
+              "secondary": "#bdf4ff",
+              "surface-bright": "#37393e",
+              "primary-fixed-dim": "#b8c3ff",
+              "secondary-fixed": "#9cf0ff",
+              "on-primary-fixed": "#001356",
+              "primary-fixed": "#dde1ff",
+              "surface-tint": "#b8c3ff",
+              "outline": "#8e90a2",
+              "surface-container-high": "#282a2e",
+              "surface": "#111318",
+              "on-tertiary-fixed-variant": "#5c4300",
+              "on-tertiary-fixed": "#261a00",
+              "secondary-container": "#00e3fd",
+              "tertiary-fixed": "#ffdfa0",
+              "secondary-fixed-dim": "#00daf3",
+              "primary-container": "#2e5bff",
+              "outline-variant": "#434656",
+              "inverse-primary": "#124af0",
+              "tertiary-container": "#8c6700",
+              "surface-container": "#1e2024",
+              "error-container": "#93000a",
+              "on-primary-fixed-variant": "#0035be",
+              "inverse-on-surface": "#2f3035",
+              "surface-variant": "#333539",
+              "on-tertiary-container": "#ffeed3",
+              "surface-container-highest": "#333539",
+              "on-tertiary": "#402d00",
+              "on-surface-variant": "#c4c5d9",
+              "primary": "#b8c3ff",
+              "background": "#111318",
+              "error": "#ffb4ab",
+              "on-secondary-fixed": "#001f24"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(51, 53, 57, 0.6);
+        backdrop-filter: blur(12px);
+        outline: 0.5px solid rgba(142, 144, 162, 0.2);
+      }
+      input[type="range"] {
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent;
+        cursor: pointer;
+      }
+      input[type="range"]::-webkit-slider-runnable-track {
+        background: #434656;
+        height: 4px;
+        border-radius: 2px;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        margin-top: -6px;
+        background-color: #b8c3ff;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#111318]/60 backdrop-blur-xl border-b-[0.5px] border-[#44474e]/20 shadow-[0_12_32px_rgba(46,91,255,0.1)] flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Executive User Profile Portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt70tc4_jOqXVPJi3uv9fFNiQShQs8Mfe3m1YC-sl0CWAQ7qAOGOhWs_9dGjx-qk1c8s_yLnPVrPnabp-xvgLYFWxwcBmUtLEUK4-XK8pTUb9q7pIXLGilc-adFckTIqQvqIHtSa_nCCp2uvqMRCl3ZNwwzA2fdm2XtrfoHB0gSGjGBcJmwUTmW2drVuo81WWonddk010Af70AQdDiKPpQiVx62ACpmkIx5CWgdVp6Ls0krY8zwRRYd3yBmIcUFNZOtzH0vL7o43Q"/>
+</div>
+<h1 class="font-manrope font-light text-xl tracking-tight text-[#e2e2e8]">Obsidian Command</h1>
+</div>
+<div class="font-manrope text-sm tracking-wider uppercase text-[#b8c3ff]">
+            LIVE: $42.5k
+        </div>
+</header>
+<main class="pt-24 pb-32 px-4 max-w-md mx-auto">
+<!-- Page Title & Section Header -->
+<section class="mb-8 px-2">
+<p class="font-label text-xs uppercase tracking-[0.1em] text-on-surface-variant mb-1">System Configuration</p>
+<h2 class="font-headline text-3xl font-light text-on-surface">予算とアラート設定</h2>
+</section>
+<!-- Base Budget Section -->
+<div class="glass-card rounded-xl p-6 mb-4 space-y-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">payments</span>
+<label class="font-label text-sm font-medium text-on-surface-variant uppercase tracking-wider">基本予算構成</label>
+</div>
+<span class="text-[10px] bg-surface-container-highest px-2 py-0.5 rounded text-primary">PROJECT_BASE</span>
+</div>
+<div class="space-y-4">
+<div class="space-y-2">
+<span class="text-xs text-on-surface-variant ml-1">基本予算 (Base Budget)</span>
+<div class="relative group">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-medium">¥</span>
+<input class="w-full bg-surface-container-lowest border-0 border-b-[0.5px] border-outline-variant focus:border-primary focus:ring-0 pl-8 pr-4 py-3 text-lg font-headline font-light text-on-surface transition-all" type="text" value="12,500,000"/>
+</div>
+</div>
+<div class="space-y-2">
+<span class="text-xs text-on-surface-variant ml-1">予備費率 (Contingency %)</span>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-0 border-b-[0.5px] border-outline-variant focus:border-primary focus:ring-0 px-4 py-3 text-lg font-headline font-light text-on-surface transition-all" type="number" value="10"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant">%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Alert Thresholds -->
+<div class="glass-card rounded-xl p-6 mb-4">
+<div class="flex items-center gap-2 mb-8">
+<span class="material-symbols-outlined text-secondary text-sm">speed</span>
+<label class="font-label text-sm font-medium text-on-surface-variant uppercase tracking-wider">アラート閾値設定</label>
+</div>
+<div class="space-y-10">
+<!-- Warning -->
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<span class="text-xs font-medium text-on-surface-variant">警告 (Warning)</span>
+<span class="font-headline text-lg text-tertiary">70%</span>
+</div>
+<input class="w-full" max="100" min="0" type="range" value="70"/>
+</div>
+<!-- Critical -->
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<span class="text-xs font-medium text-on-surface-variant">重要 (Critical)</span>
+<span class="font-headline text-lg text-error">85%</span>
+</div>
+<input class="w-full" max="100" min="0" type="range" value="85"/>
+</div>
+<!-- Overrun -->
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<span class="text-xs font-medium text-on-surface-variant">超過 (Overrun)</span>
+<span class="font-headline text-lg text-on-error-container">95%</span>
+</div>
+<input class="w-full" max="100" min="0" type="range" value="95"/>
+</div>
+</div>
+</div>
+<!-- Integration Toggles -->
+<div class="glass-card rounded-xl p-6 mb-8 space-y-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm">notifications_active</span>
+<label class="font-label text-sm font-medium text-on-surface-variant uppercase tracking-wider">通知連携</label>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest/40">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">phone_iphone</span>
+<span class="text-sm">プッシュ通知</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest/40">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">terminal</span>
+<span class="text-sm">Slack 連携</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full py-4 bg-primary-container text-on-primary-container font-headline font-semibold rounded-lg shadow-[0_4px_16px_rgba(46,91,255,0.3)] active:scale-95 transition-all">
+            設定を保存する
+        </button>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-[#111318]/80 backdrop-blur-2xl border-t-[0.5px] border-[#44474e]/20 shadow-[0_-8px_24px_rgba(0,0,0,0.5)] flex justify-around items-center h-20 pb-safe px-4">
+<a class="flex flex-col items-center justify-center text-[#e2e2e8]/50 py-1 px-3 hover:text-[#b8c3ff] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-inter text-[10px] font-medium tracking-[0.05em] uppercase">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#e2e2e8]/50 py-1 px-3 hover:text-[#b8c3ff] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-inter text-[10px] font-medium tracking-[0.05em] uppercase">Receipts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#e2e2e8]/50 py-1 px-3 hover:text-[#b8c3ff] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-inter text-[10px] font-medium tracking-[0.05em] uppercase">Staff</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#00e3fd] bg-[#2e5bff]/10 rounded-lg py-1 px-3 hover:text-[#b8c3ff] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-inter text-[10px] font-medium tracking-[0.05em] uppercase">Settings</span>
+</a>
+</nav>
+</body></html>

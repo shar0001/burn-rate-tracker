@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Obsidian - Financial Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error": "#690005",
+              "outline-variant": "#434656",
+              "on-surface": "#e2e2e8",
+              "on-surface-variant": "#c4c5d9",
+              "tertiary-fixed": "#ffdfa0",
+              "surface-container": "#1e2024",
+              "secondary-fixed": "#9cf0ff",
+              "primary": "#b8c3ff",
+              "on-secondary-container": "#00616d",
+              "surface-variant": "#333539",
+              "on-secondary-fixed": "#001f24",
+              "error": "#ffb4ab",
+              "surface-container-lowest": "#0c0e12",
+              "on-background": "#e2e2e8",
+              "on-primary-fixed-variant": "#0035be",
+              "on-primary": "#002388",
+              "on-primary-fixed": "#001356",
+              "tertiary": "#fbbc00",
+              "secondary-fixed-dim": "#00daf3",
+              "on-primary-container": "#efefff",
+              "inverse-on-surface": "#2f3035",
+              "tertiary-fixed-dim": "#fbbc00",
+              "surface-bright": "#37393e",
+              "surface-container-high": "#282a2e",
+              "surface-dim": "#111318",
+              "error-container": "#93000a",
+              "inverse-primary": "#124af0",
+              "outline": "#8e90a2",
+              "on-tertiary-container": "#ffeed3",
+              "on-tertiary": "#402d00",
+              "inverse-surface": "#e2e2e8",
+              "tertiary-container": "#8c6700",
+              "secondary-container": "#00e3fd",
+              "on-secondary": "#00363d",
+              "surface-container-highest": "#333539",
+              "background": "#111318",
+              "secondary": "#bdf4ff",
+              "surface-container-low": "#1a1c20",
+              "surface": "#111318",
+              "primary-fixed-dim": "#b8c3ff",
+              "on-tertiary-fixed-variant": "#5c4300",
+              "primary-container": "#2e5bff",
+              "surface-tint": "#b8c3ff",
+              "on-tertiary-fixed": "#261a00",
+              "on-secondary-fixed-variant": "#004f58",
+              "on-error-container": "#ffdad6",
+              "primary-fixed": "#dde1ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(51, 53, 57, 0.6);
+        backdrop-filter: blur(16px);
+        outline: 0.5px solid rgba(142, 144, 162, 0.2);
+      }
+      .burn-gradient {
+        background: linear-gradient(180deg, rgba(0, 227, 253, 0.15) 0%, rgba(0, 227, 253, 0) 100%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30 min-h-screen pb-24 overflow-x-hidden">
+<!-- TopAppBar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-[#111318]/90 backdrop-blur-lg border-b border-white/5 flex justify-between items-center px-6 py-4 shadow-xl shadow-black/50">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant/30">
+<img alt="Production Manager Avatar" data-alt="Close up of a professional production manager avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVZPj9R0jdHSI8mWFYG5IfkqXueO-bu2PlOokgkDRMo5p8TmIIOFgn0QjtKtL5gLxAkhWfB0EvXF4CZtz_zZU922kjlv2yu53YgceZbep4vlNzGPoorQYrBLf2EKPgajSZ4TeKhw7XtB2S2wq5df4mNsAoornPRwIk71fElxl8VQczzX-L2Sb0HqWdL_kPSF2QS5KKgFKNDfPO3IToFkkSFmlaNLJNudcI4U13MNy93F8Ak2zCE_8T2wiLL7dswEj4HHmSW6I0-jc"/>
+</div>
+<span class="text-lg font-light tracking-widest text-[#e2e2e8] font-headline">Project Obsidian</span>
+</div>
+<div class="flex items-center">
+<span class="text-xs font-semibold text-[#b8c3ff] font-body bg-primary-container/10 px-2 py-1 rounded tracking-tight">$1,240/hr</span>
+</div>
+</nav>
+<main class="mt-20 px-4 space-y-6">
+<!-- Section 1: Burn Rate Chart (燃焼率の傾向) -->
+<section class="space-y-3">
+<div class="flex justify-between items-end px-1">
+<div>
+<p class="text-[10px] uppercase tracking-[0.05em] text-on-surface-variant font-medium">燃焼率の傾向</p>
+<h2 class="text-xl font-light font-headline text-on-surface leading-tight">Burn Rate Trends</h2>
+</div>
+<div class="flex gap-2 text-[10px] font-bold text-secondary-container">
+<span class="px-2 py-0.5 rounded bg-secondary-container/10">LIVE FEED</span>
+</div>
+</div>
+<div class="glass-card rounded-xl overflow-hidden p-4 h-48 relative">
+<!-- Simplified Mock Chart -->
+<div class="absolute inset-0 burn-gradient"></div>
+<div class="relative h-full w-full flex items-end gap-1">
+<!-- Chart Path Mockup using flex/divs -->
+<div class="flex-1 bg-secondary-container/20 h-[30%] rounded-t-sm"></div>
+<div class="flex-1 bg-secondary-container/30 h-[45%] rounded-t-sm"></div>
+<div class="flex-1 bg-secondary-container/40 h-[60%] rounded-t-sm"></div>
+<div class="flex-1 bg-secondary-container/50 h-[55%] rounded-t-sm"></div>
+<div class="flex-1 bg-secondary-container/60 h-[70%] rounded-t-sm border-t border-secondary-container"></div>
+<div class="flex-1 bg-secondary-container/40 h-[65%] rounded-t-sm"></div>
+<div class="flex-1 bg-secondary-container/70 h-[85%] rounded-t-sm border-t-2 border-secondary-container"></div>
+<div class="flex-1 bg-secondary-container/30 h-[50%] rounded-t-sm"></div>
+<div class="flex-1 bg-secondary-container/50 h-[75%] rounded-t-sm"></div>
+<div class="flex-1 bg-secondary-container/80 h-[95%] rounded-t-sm border-t-2 border-secondary-container relative">
+<div class="absolute -top-6 -left-4 bg-secondary-container text-on-secondary px-1.5 py-0.5 rounded text-[10px] font-bold">$1.8k</div>
+</div>
+</div>
+<!-- Y-Axis Labels -->
+<div class="absolute left-2 top-4 flex flex-col justify-between h-[80%] text-[8px] text-outline opacity-50 font-bold">
+<span>2.0k</span>
+<span>1.0k</span>
+<span>0</span>
+</div>
+</div>
+</section>
+<!-- Section 2: Metrics Grid (主要指標) -->
+<section class="grid grid-cols-2 gap-3">
+<!-- Metric 1 -->
+<div class="glass-card p-4 rounded-xl space-y-2">
+<p class="text-[9px] uppercase tracking-wider text-on-surface-variant">完了時の予測合計<br/><span class="opacity-60">Projected Total</span></p>
+<p class="text-lg font-semibold font-body text-primary">$4.28M</p>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[82%]"></div>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="glass-card p-4 rounded-xl space-y-2">
+<p class="text-[9px] uppercase tracking-wider text-on-surface-variant">現在の分散<br/><span class="opacity-60">Current Variance</span></p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary text-sm">trending_up</span>
+<p class="text-lg font-semibold font-body text-tertiary">+4.2%</p>
+</div>
+<p class="text-[8px] text-outline uppercase">Over Budget Pace</p>
+</div>
+<!-- Metric 3 -->
+<div class="glass-card p-4 rounded-xl space-y-2">
+<p class="text-[9px] uppercase tracking-wider text-on-surface-variant">平均燃焼率/時<br/><span class="opacity-60">Avg Burn Rate</span></p>
+<p class="text-lg font-semibold font-body text-secondary-container">$1,240</p>
+<p class="text-[8px] text-outline uppercase">Last 24 Hours</p>
+</div>
+<!-- Metric 4 -->
+<div class="glass-card p-4 rounded-xl space-y-2">
+<p class="text-[9px] uppercase tracking-wider text-on-surface-variant">残存予備費<br/><span class="opacity-60">Contingency</span></p>
+<p class="text-lg font-semibold font-body text-on-surface">18.5%</p>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-on-surface h-full w-[18.5%]"></div>
+</div>
+</div>
+</section>
+<!-- Section 3: Resource Allocation (リソース配分) -->
+<section class="glass-card p-5 rounded-xl">
+<div class="flex justify-between items-center mb-6">
+<div>
+<p class="text-[10px] uppercase tracking-[0.05em] text-on-surface-variant">リソース配分</p>
+<h2 class="text-lg font-light font-headline">Resource Allocation</h2>
+</div>
+<span class="material-symbols-outlined text-outline">analytics</span>
+</div>
+<div class="flex items-center gap-8">
+<!-- Mock Donut Chart -->
+<div class="relative w-28 h-28 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="transparent" r="15.9" stroke="#1e2024" stroke-width="3"></circle>
+<circle cx="18" cy="18" fill="transparent" r="15.9" stroke="#2e5bff" stroke-dasharray="45 100" stroke-width="3"></circle>
+<circle cx="18" cy="18" fill="transparent" r="15.9" stroke="#00e3fd" stroke-dasharray="25 100" stroke-dashoffset="-45" stroke-width="3"></circle>
+<circle cx="18" cy="18" fill="transparent" r="15.9" stroke="#fbbc00" stroke-dasharray="15 100" stroke-dashoffset="-70" stroke-width="3"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-[10px] font-bold text-on-surface">TOTAL</span>
+<span class="text-xs font-body">$2.1M</span>
+</div>
+</div>
+<!-- Legend -->
+<div class="flex-1 space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary-container"></div>
+<span class="text-[10px] text-on-surface-variant">Staff</span>
+</div>
+<span class="text-[10px] font-bold">45%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary-container"></div>
+<span class="text-[10px] text-on-surface-variant">Equip</span>
+</div>
+<span class="text-[10px] font-bold">25%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="text-[10px] text-on-surface-variant">Trans</span>
+</div>
+<span class="text-[10px] font-bold">15%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Upcoming Committed Expenses (予定支出) -->
+<section class="pb-8">
+<div class="flex justify-between items-end mb-3 px-1">
+<div>
+<p class="text-[10px] uppercase tracking-[0.05em] text-on-surface-variant">予定支出</p>
+<h2 class="text-lg font-light font-headline">Committed Expenses</h2>
+</div>
+<button class="text-[10px] font-bold text-primary tracking-widest uppercase">View All</button>
+</div>
+<div class="space-y-2">
+<!-- List Item 1 -->
+<div class="bg-surface-container-low p-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container-highest flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-outline">photo_camera</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-on-surface">Panavision Alexa Rental</p>
+<p class="text-[9px] text-outline-variant uppercase tracking-tighter">Equipment Cluster A</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">$12,400</p>
+<p class="text-[9px] text-error font-bold">-0.2% IMPACT</p>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="bg-surface-container-lowest p-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container-highest flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-outline">movie_edit</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-on-surface">MPC On-Set Supervision</p>
+<p class="text-[9px] text-outline-variant uppercase tracking-tighter">VFX Daily Retainer</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">$8,500</p>
+<p class="text-[9px] text-secondary-container font-bold">NEUTRAL</p>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="bg-surface-container-low p-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-surface-container-highest flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-outline">local_shipping</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-on-surface">Unit Transport Fuel</p>
+<p class="text-[9px] text-outline-variant uppercase tracking-tighter">Fleet Logistics</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">$3,200</p>
+<p class="text-[9px] text-error font-bold">-0.05% IMPACT</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-[#111318] border-t border-white/5 shadow-[0_-12px_32px_rgba(0,0,0,0.6)] flex justify-around items-center px-4 pb-8 pt-3 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-[#b8c3ff] bg-[#2e5bff]/10 rounded-lg py-1 px-3" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-[0.1em] mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4a4d55] hover:text-[#b8c3ff] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-[0.1em] mt-1">Receipts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4a4d55] hover:text-[#b8c3ff] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-[0.1em] mt-1">Staff</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#4a4d55] hover:text-[#b8c3ff] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-inter text-[10px] font-medium uppercase tracking-[0.1em] mt-1">Settings</span>
+</a>
+</nav>
+</body></html>
