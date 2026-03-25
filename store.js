@@ -235,12 +235,6 @@ const Store = (() => {
   }
 
   function formatYenCompact(amount) {
-    if (Math.abs(amount) >= 1000000) {
-      return '¥' + (amount / 1000000).toFixed(1) + 'M';
-    }
-    if (Math.abs(amount) >= 1000) {
-      return '¥' + (amount / 1000).toFixed(1) + 'k';
-    }
     return '¥' + amount.toLocaleString('ja-JP');
   }
 
